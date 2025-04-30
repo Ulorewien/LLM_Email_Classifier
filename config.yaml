@@ -1,0 +1,3 @@
+email_prompt: prompt1
+generation_prompt: prompt4
+llm_model: meta-llama/Llama-3.2-3B-Instruct
