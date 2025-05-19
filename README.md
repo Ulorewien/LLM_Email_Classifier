@@ -53,17 +53,17 @@ HF_TOKEN=your_huggingface_token_here
 ---
 
 ## Sample Outputs
-**Complaint**
+**Complaint:**
 "We apologize... We have created an urgent ticket... Expect a refund within 48 hours..."
 
-**Inquiry**
+**Inquiry:**
 "Our premium package is compatible with Mac OS... Please find the specifications here..."
 
-**Feedback**
+**Feedback:**
 "Thank you for your kind words... We're thrilled to hear about your positive experience..."
 
-**Support Request**
+**Support Request:**
 "We've created a support ticket... Please update the software and try reinstalling..."
 
-**Other (Partnership)**
+**Other (Partnership):**
 "We're excited to explore a partnership... How about a call on Wednesday at 2 PM EST?"
