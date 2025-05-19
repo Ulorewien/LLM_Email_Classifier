@@ -80,7 +80,7 @@ sample_emails = [
 
 class EmailProcessor:
     def __init__(self):
-        """Initialize the email processor with OpenAI API key."""
+        """Initialize the email processor with LLM API key."""
         
         model_name = config["llm_model"]
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -97,11 +97,6 @@ class EmailProcessor:
         """
         Classify an email using LLM.
         Returns the classification category or None if classification fails.
-        
-        TODO: 
-        1. Design and implement the classification prompt
-        2. Make the API call with appropriate error handling
-        3. Validate and return the classification
         """
         
         system_prompt = email_classification_prompt
@@ -134,11 +129,6 @@ class EmailProcessor:
     def generate_response(self, email: Dict, classification: str) -> Optional[str]:
         """
         Generate an automated response based on email classification.
-        
-        TODO:
-        1. Design the response generation prompt
-        2. Implement appropriate response templates
-        3. Add error handling
         """
         
         system_prompt = response_generation_prompt
@@ -183,11 +173,6 @@ class EmailAutomationSystem:
         """
         Process a single email through the complete pipeline.
         Returns a dictionary with the processing results.
-        
-        TODO:
-        1. Implement the complete processing pipeline
-        2. Add appropriate error handling
-        3. Return processing results
         """
         
         try:
@@ -231,35 +216,30 @@ class EmailAutomationSystem:
     def _handle_complaint(self, email: Dict):
         """
         Handle complaint emails.
-        TODO: Implement complaint handling logic
         """
         create_urgent_ticket(email["from"], "complaint", email["body"])
 
     def _handle_inquiry(self, email: Dict):
         """
         Handle inquiry emails.
-        TODO: Implement inquiry handling logic
         """
         create_support_ticket(email["from"], email["body"])
 
     def _handle_feedback(self, email: Dict):
         """
         Handle feedback emails.
-        TODO: Implement feedback handling logic
         """
         log_customer_feedback(email["from"], email["body"])
 
     def _handle_support_request(self, email: Dict):
         """
         Handle support request emails.
-        TODO: Implement support request handling logic
         """
         create_support_ticket(email["from"], email["body"])
 
     def _handle_other(self, email: Dict):
         """
         Handle other category emails.
-        TODO: Implement handling logic for other categories
         """
         logger.info(f"Handled email {email['id']}")
 
