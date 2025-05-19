@@ -15,27 +15,17 @@ This project demonstrates a complete pipeline for **classifying and responding t
 
 ---
 
-## Tech Stack
-
-- **Model**: [meta-llama/Llama-3.2-3B-Instruct](https://huggingface.co/meta-llama)
-- **Transformer Library**: `transformers`
-- **Quantization**: 4-bit (NF4) with `bitsandbytes`
-- **Configuration**: `yaml`, `json`, `.env`
-- **Email Logic**: Python, `pandas`, `logging`
-- **Runtime**: Google Colab (due to GPU constraints)
-
----
-
 ## Project Structure
 
 ```
 .
-├── config.yaml              # Model and prompt configuration
-├── prompts.json             # Prompt templates for classification & generation
-├── main.py                  # Main script for processing emails
-├── utils.py                 # Input validation and helper functions
-├── .env                     # Hugging Face token (excluded from version control)
-├── README.md                # Project documentation
+├── .env                          # Hugging Face token (excluded from version control)
+├── config.yaml                   # YAML config for model and prompt settings
+├── email_classifier_template.py  # Base Python script (template)
+├── llm_email_classifier.ipynb    # Colab notebook version of the pipeline
+├── prompts.json                  # Prompt templates for classification & response generation
+├── requirements.txt              # Required Python dependencies
+├── utils.py                      # Utility functions for validation, etc.
 ```
 ---
 
@@ -60,3 +50,20 @@ Create a .env file in the project root:
 HF_TOKEN=your_huggingface_token_here
 ```
 
+---
+
+## Sample Outputs
+**Complaint**
+"We apologize... We have created an urgent ticket... Expect a refund within 48 hours..."
+
+**Inquiry**
+"Our premium package is compatible with Mac OS... Please find the specifications here..."
+
+**Feedback**
+"Thank you for your kind words... We're thrilled to hear about your positive experience..."
+
+**Support Request**
+"We've created a support ticket... Please update the software and try reinstalling..."
+
+**Other (Partnership)**
+"We're excited to explore a partnership... How about a call on Wednesday at 2 PM EST?"
